@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="hu.petrik.calculator.HelloController">
+<?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.petrik.calculator.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <GridPane maxHeight="150" maxWidth="250" minHeight="150" minWidth="250">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <children>
+            <Button mnemonicParsing="false" prefHeight="Infinity" prefWidth="Infinity" text="+" GridPane.rowIndex="1"
+                    fx:id="addition" onAction="#addition"/>
+            <Button mnemonicParsing="false" prefHeight="Infinity" prefWidth="Infinity" text="-" GridPane.columnIndex="1"
+                    GridPane.rowIndex="1" fx:id="subtraction" onAction="#subtraction"/>
+            <Button mnemonicParsing="false" prefHeight="Infinity" prefWidth="Infinity" text="*" GridPane.columnIndex="2"
+                    GridPane.rowIndex="1" fx:id="multiplication" onAction="#multiplication"/>
+            <Button mnemonicParsing="false" prefHeight="Infinity" prefWidth="Infinity" text="/" GridPane.columnIndex="3"
+                    GridPane.rowIndex="1" fx:id="division" onAction="#division"/>
+            <Button mnemonicParsing="false" prefHeight="Infinity" prefWidth="Infinity" text="\%"
+                    GridPane.columnIndex="4" GridPane.rowIndex="1" fx:id="modulus" onAction="#modulus"/>
+            <Spinner fx:id="szamElso" prefWidth="Infinity" GridPane.columnSpan="2" editable="true">
+                <valueFactory>
+                    <SpinnerValueFactory.DoubleSpinnerValueFactory min="-10000.0" max="10000.0" initialValue="0.0"
+                                                                   amountToStepBy="0.1"/>
+                </valueFactory>
+            </Spinner>
+            <Spinner fx:id="szamMasodik" prefWidth="Infinity" GridPane.columnIndex="3" GridPane.columnSpan="2" editable="true">
+                <valueFactory>
+                    <SpinnerValueFactory.DoubleSpinnerValueFactory min="-10000.0" max="10000.0" initialValue="0.0"
+                                                                   amountToStepBy="0.1"/>
+                </valueFactory>
+            </Spinner>
+            <Label fx:id="output" prefWidth="Infinity" GridPane.columnSpan="5" GridPane.rowIndex="2"/>
+        </children>
+    </GridPane>
 </VBox>

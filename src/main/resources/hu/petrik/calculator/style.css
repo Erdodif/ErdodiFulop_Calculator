@@ -1,0 +1,27 @@
+* {
+    -fx-font-size:20px;
+    -fx-text-alignment:center;
+}
+.hiba {
+    -fx-color: red;
+}
+.label {
+    -fx-font-size:30px;
+}
+.button {
+    -fx-background-color: grey;
+    -fx-border-color: black;
+    -fx-background-radius:10;
+    -fx-border-radius:10;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}
+.label{
+    -fx-border-color: black;
+    -fx-border-width: 3;
+    -fx-border-inset: 10;
+    -fx-border-style: solid;
+}
+.spinner{
+    -fx-font-size: 5;
+}
